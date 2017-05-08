@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:context="com.example.oem.aps2.AdminScreen">
+
+    <TextView
+        android:id="@+id/tvBemVindo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:text="Bem vindo admin"
+        android:textColorHint="@android:color/background_dark"
+        android:textSize="30sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@android:color/black"
+        android:visibility="visible" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/bUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:onClick="OnClickCrudUsuario"
+        android:text="Usuarios" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/bItens"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:onClick="OnClickCrudItem"
+        android:text="Itens" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/bFornecedores"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:onClick="OnClickCrudFornecedor"
+        android:text="Fornecedores" />
+</LinearLayout>

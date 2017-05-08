@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CadastroUsuario" />
+        <activity android:name=".AdminScreen" />
+        <activity android:name=".CRUD" />
+        <activity android:name=".UserScreen"></activity>
     </application>
 
 </manifest>
