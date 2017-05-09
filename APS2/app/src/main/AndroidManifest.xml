@@ -19,7 +19,9 @@
         <activity android:name=".CadastroUsuario" />
         <activity android:name=".AdminScreen" />
         <activity android:name=".CRUD" />
-        <activity android:name=".UserScreen"></activity>
+        <activity android:name=".UserScreen" />
+        <activity android:name=".CadastroItem" />
+        <activity android:name=".CadastroFornecedor"></activity>
     </application>
 
 </manifest>

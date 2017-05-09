@@ -28,6 +28,10 @@ public class LogIn extends AppCompatActivity {
             Intent it = new Intent(LogIn.this, AdminScreen.class);
             startActivity(it);
         }
+        if(login.equals("cliente") && senha.equals("123")){
+            Intent it = new Intent(LogIn.this, UserScreen.class);
+            startActivity(it);
+        }
 
     }
 

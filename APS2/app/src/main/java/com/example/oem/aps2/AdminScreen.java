@@ -30,4 +30,6 @@ public class AdminScreen extends AppCompatActivity {
         it.putExtra("IDbotao", idBotao);
         startActivity(it);
     }
+
+
 }

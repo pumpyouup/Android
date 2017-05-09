@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class CRUD extends AppCompatActivity {
+    int idBotao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,17 +19,34 @@ public class CRUD extends AppCompatActivity {
         Intent it = getIntent();
 
 
-        int idBoatao = it.getIntExtra("IDbotao", -1);
+        idBotao = it.getIntExtra("IDbotao", -1);
 
-        if (idBoatao == 1) {
+        if (idBotao == 1) {
             String texto = String.format("Usuarios");
             txt.setText(texto);
-        } else if (idBoatao == 2){
+        } else if (idBotao == 2){
             String texto = String.format("Itens");
             txt.setText(texto);
         } else {
             String texto = String.format("Fornecedores");
             txt.setText(texto);
+        }
+
+
+    }
+
+    public void OnClickCrudDAdd(View V){
+        if (idBotao == 1){
+            Intent it = new Intent(CRUD.this, CadastroUsuario.class);
+            startActivity(it);
+        }
+        else if (idBotao == 2){
+            Intent it = new Intent(CRUD.this, CadastroItem.class);
+            startActivity(it);
+        }
+        else if (idBotao == 3){
+            Intent it = new Intent(CRUD.this, CadastroFornecedor.class);
+            startActivity(it);
         }
 
 
