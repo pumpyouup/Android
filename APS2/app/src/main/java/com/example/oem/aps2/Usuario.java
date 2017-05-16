@@ -1,52 +1,61 @@
 package com.example.oem.aps2;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 /**
- * Created by clayton on 26/03/17.
+ * Created by oem on 15/05/17.
  */
 
-public class Usuario implements Parcelable{
+public class Usuario {
+    private int codigo;
+    private String nome;
+    private String senha;
+    private String email;
+    private String nick;
 
-    public int codigo;
-    public String nome;
-    public String senha;
-
-    public Usuario(int codigo, String nome, String senha){
-        this.codigo=codigo;
-        this.nome=nome;
-        this.senha=senha;
+    public Usuario(int codigo, String nome, String senha, String email, String nick) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.senha = senha;
+        this.email = email;
+        this.nick = nick;
     }
 
-    private Usuario(Parcel from){
-        codigo=from.readInt();
-        nome=from.readString();
-        senha=from.readString();
+    public int getCodigo() {
+        return codigo;
     }
 
-    public static final Creator<Usuario> CREATOR = new Creator<Usuario>()
-    {
-        public Usuario createFromParcel(Parcel in){
-            return new Usuario(in);
-        }
-
-        public Usuario[] newArray(int size){
-            return new Usuario[size];
-        }
-    };
-
-    //este método contém um número que servirá como identificador único dessa classe no projeto
-    @Override
-    public int describeContents() {
-        return 0;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-    //este método serializa (transforma em bytes) os atributos da classe
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(codigo);
-        dest.writeString(nome);
-        dest.writeString(senha);
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
     }
 }

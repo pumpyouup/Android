@@ -1,8 +1,11 @@
 package com.example.oem.aps2;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 public class UserScreen extends AppCompatActivity {
@@ -12,14 +15,15 @@ public class UserScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_screen);
 
+        BancoController crud = new BancoController(getBaseContext());
+        Cursor cursor = crud.CarregaDadosItem();
 
-        TextView txt = (TextView) findViewById(R.id.tvIdentficacao);
-        Intent it = getIntent();
+        String[] nomeCampos = new String[] {CriaBanco.COLUNA_CODIGO, CriaBanco.COLUNA_NOME};
+        int[] idViews = new int[] {R.id.codigoUsuario, R.id.nickUsuario};
 
-        Usuario usuario = it.getParcelableExtra("usuario");
-        if (usuario != null) {
-            String texto = String.format("Bem vindo: %s!", usuario.nome);
-            txt.setText(texto);
-        }
+        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(), R.layout.layout_lista,
+                cursor,nomeCampos,idViews, 0);
+        ListView lista = (ListView)findViewById(R.id.lista);
+        lista.setAdapter(adaptador);
     }
 }

@@ -21,7 +21,7 @@
         <activity android:name=".CRUD" />
         <activity android:name=".UserScreen" />
         <activity android:name=".CadastroItem" />
-        <activity android:name=".CadastroFornecedor"></activity>
+        <activity android:name=".CadastroFornecedor" />
     </application>
 
 </manifest>
